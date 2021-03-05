@@ -1,7 +1,7 @@
 import unittest
-from classes.guests import Guest
-from classes.rooms import Room
-from classes.songs import Song
+from classes.guest import Guest
+from classes.room import Room
+from classes.song import Song
 
 class TestSong(unittest.TestCase):
     def setUp(self):
