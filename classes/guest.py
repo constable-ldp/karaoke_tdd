@@ -14,6 +14,20 @@ class Guest:
         self.checked_in = False
         self.time = time
 
-        #if time == 0: check_out(0)
+    def find_favourite_song(self, room, song):
+        for song in room.songs:
+            if song.title == self.favourite_song:
+                self.rowdiness += 2
+                if self.rowdiness > 10:
+                    self.rowdiness = 10
+                return 'Wooo! This is my favourite song!'
+        return
 
-    
+    def find_favourite_artist(self, room, song):
+        for song in room.songs:
+            if song.artist == self.favourite_artist:
+                self.rowdiness += 1
+                if self.rowdiness > 10:
+                    self.rowdiness = 10
+                return 'Nice, I love this band!'
+        return
