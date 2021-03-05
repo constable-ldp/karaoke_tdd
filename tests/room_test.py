@@ -19,5 +19,23 @@ class TestRoom(unittest.TestCase):
     def test_has_current_capacity(self):
         self.assertEqual(8, self.room.max_capacity)
     
-    def test_is_premium(self):
+    def test_has_premium(self):
         self.assertEqual(False, self.room.premium)
+
+    def test_check_in(self):
+        self.assertEqual(5, self.room.current_capacity)
+
+    def test_check_in__above_max(self):
+        new_room = Room(1, 14.99, 8, 8, False)
+        
+        self.assertEqual(8, new_room.current_capacity)
+
+    def test_check_in__in_other_room(self):
+        pass
+        #self.assertEqual('Customer needs to check out before moving to new room',)
+
+    def test_check_in__money_available(self):
+        pass
+
+    def test_check_out(self):
+        pass
