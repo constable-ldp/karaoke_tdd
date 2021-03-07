@@ -23,7 +23,7 @@ class Room:
         guest.checked_in = False
 
     def add_song(self, song):
-        for current_songs in self.songs:
+        for current_song in self.songs:
             if current_song == song:
                 return
         self.songs.append(song)

@@ -46,8 +46,13 @@ class TestRoom(unittest.TestCase):
         self.room.check_in(self.guest)
         self.assertEqual(5, self.room.current_capacity)
 
-    def test_check_out(self):
+    def test_check_out__pass(self):
         self.room.check_in(self.guest)
+        self.assertEqual(5, self.room.current_capacity)
+        self.room.check_out(self.guest)
+        self.assertEqual(4, self.room.current_capacity)
+
+    def test_check_out__fail(self):
         self.room.check_out(self.guest)
         self.assertEqual(4, self.room.current_capacity)
 
@@ -55,4 +60,7 @@ class TestRoom(unittest.TestCase):
         self.room.add_song(self.song)
         self.assertEqual('Bruce Springsteen', self.room.songs[0].artist)
 
-    #def test_add_song__fail(self):
+    def test_add_song__cant_add_same_song(self):
+        self.room.add_song(self.song)
+        self.room.add_song(self.song)
+        self.assertEqual(1, len(self.room.songs))

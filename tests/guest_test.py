@@ -43,17 +43,29 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(6, self.guest.fun)
 
     def test_find_favourite_song__fail(self):
-        guest = self.guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
-                                'The River', None, False)
+        guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
+                    'The River', None, False)
         self.assertEqual(None, guest.find_favourite_song(self.room, self.song))
-        self.assertEqual(4, self.guest.fun)
+        self.assertEqual(4, guest.fun)
+
+    def test_find_favourite_song__fail2(self):
+        guest = Guest('John', 18, 100.00, 10, 0, 'Bruce Springsteen', 
+                    'Dancing in the Dark', None, False)
+        self.assertEqual('Wooo! This is my favourite song!', guest.find_favourite_song(self.room, self.song))
+        self.assertEqual(10, guest.fun)
     
-    def test_find_favourite_song__pass(self):
+    def test_find_favourite_artist__pass(self):
         self.assertEqual('Nice, I love this band!', self.guest.find_favourite_artist(self.room, self.song))
         self.assertEqual(5, self.guest.fun)
 
-    def test_find_favourite_song__fail(self):
-        guest = self.guest = Guest('John', 18, 100.00, 4, 0, 'Future Islands', 
-                                    'Seasons', None, False)
+    def test_find_favourite_artist__fail(self):
+        guest = Guest('John', 18, 100.00, 4, 0, 'Future Islands', 
+                    'Dancing in the Dark', None, False)
         self.assertEqual(None, guest.find_favourite_artist(self.room, self.song))
-        self.assertEqual(4, self.guest.fun)
+        self.assertEqual(4, guest.fun)
+
+    def test_find_favourite_artist__fail2(self):
+        guest = Guest('John', 18, 100.00, 10, 0, 'Bruce Springsteen', 
+                    'Dancing in the Dark', None, False)
+        self.assertEqual('Nice, I love this band!', guest.find_favourite_artist(self.room, self.song))
+        self.assertEqual(10, guest.fun)

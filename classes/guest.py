@@ -17,7 +17,7 @@ class Guest:
             if song.title == self.favourite_song:
                 self.fun += 2
                 if self.fun > 10:
-                    self.rowdiness = 10
+                    self.fun = 10
                 return 'Wooo! This is my favourite song!'
         return
 

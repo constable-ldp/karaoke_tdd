@@ -17,9 +17,7 @@ class Bar:
 
     def buy_drinks(self, drink_name, bar, guest):
         drink = self.find_drink_by_name(drink_name)
-        if self.check_underage(guest) or guest.wallet < drink.price:
-            return
-        if guest.drunkeness > 10:
+        if self.check_underage(guest) or guest.wallet < drink.price or guest.drunkeness > 10:
             guest.fun -= 1
             return 
         guest.increase_drunkeness(drink)
