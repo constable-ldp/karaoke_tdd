@@ -1,16 +1,12 @@
 import unittest
 from classes.guest import Guest
-from classes.room import Room
-from classes.song import Song
 from classes.bar import Bar
 from classes.drinks import Drinks
 
 class TestBar(unittest.TestCase):
     def setUp(self):
-        self.guest = Guest('John', 18, 100.00, 4, 0, False, 'Bruce Springsteen', 
-                            'Dancing in the Dark', None, False, 180)
-        #self.song = Song('Bruce Springsteen', 'Dancing in the Dark', 239)
-        #self.room = Room(1, 14.99, [self.song], 4, 8, False)
+        self.guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
+                            'Dancing in the Dark', None, False)
         self.bar = Bar(1000, [])
         self.drinks = Drinks('Ale', 4.99, 2)
 
@@ -28,8 +24,8 @@ class TestBar(unittest.TestCase):
         self.assertEqual(False, self.bar.check_underage(self.guest))
 
     def test_check_underage__fail(self):
-        new_guest = Guest('John', 17, 100.00, 4, 0, False, 'Bruce Springsteen', 
-                            'Dancing in the Dark', None, False, 180)
+        new_guest = Guest('John', 17, 100.00, 4, 0, 'Bruce Springsteen', 
+                            'Dancing in the Dark', None, False)
         self.assertEqual(True, self.bar.check_underage(new_guest))
 
     def test_check_find_drink_by_name(self):

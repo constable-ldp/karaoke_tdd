@@ -1,12 +1,10 @@
 class Room:
-    def __init__(self, room_number, price, songs, current_capacity, max_capacity, 
-                premium):
+    def __init__(self, room_number, price, songs, current_capacity, max_capacity):
         self.room_number = room_number
         self.price = price
         self.current_capacity = current_capacity
         self.songs = songs
         self.max_capacity = max_capacity
-        self.premium = premium
 
     def check_in(self, guest):
         if guest.checked_in == True \
