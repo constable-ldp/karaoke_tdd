@@ -4,6 +4,7 @@ from classes.room import Room
 from classes.song import Song
 
 class TestRoom(unittest.TestCase):
+    
     def setUp(self):
         self.guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
                             'Dancing in the Dark', None, False)

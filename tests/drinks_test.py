@@ -2,6 +2,7 @@ import unittest
 from classes.drinks import Drinks
 
 class TestDrinks(unittest.TestCase):
+    
     def setUp(self):
         self.drinks = Drinks('Ale', 4.99, 3)
 

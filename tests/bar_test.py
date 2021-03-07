@@ -4,6 +4,7 @@ from classes.bar import Bar
 from classes.drinks import Drinks
 
 class TestBar(unittest.TestCase):
+    
     def setUp(self):
         self.guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
                             'Dancing in the Dark', None, False)

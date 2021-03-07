@@ -4,12 +4,12 @@ from classes.room import Room
 from classes.song import Song
 
 class TestGuest(unittest.TestCase):
+
     def setUp(self):
         self.guest = Guest('John', 18, 100.00, 4, 0, 'Bruce Springsteen', 
                             'Dancing in the Dark', None, False)
         self.song = Song('Bruce Springsteen', 'Dancing in the Dark', 239)
         self.room = Room(1, 14.99, [self.song], 4, 8)
-
     
     def test_has_name(self):
         self.assertEqual('John', self.guest.name)

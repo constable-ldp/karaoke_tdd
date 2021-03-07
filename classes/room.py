@@ -1,4 +1,5 @@
 class Room:
+    
     def __init__(self, room_number, price, songs, current_capacity, max_capacity):
         self.room_number = room_number
         self.price = price

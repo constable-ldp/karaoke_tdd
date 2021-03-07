@@ -1,4 +1,5 @@
 class Bar:
+    
     def __init__(self, till, drinks):
         self.till = till
         self.drinks = drinks
