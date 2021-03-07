@@ -1,5 +1,5 @@
 class Room:
-    
+
     def __init__(self, room_number, price, songs, current_capacity, max_capacity):
         self.room_number = room_number
         self.price = price
@@ -8,7 +8,7 @@ class Room:
         self.max_capacity = max_capacity
 
     def check_in(self, guest):
-        if guest.checked_in == True \
+        if guest.checked_in \
         or self.current_capacity == self.max_capacity \
         or guest.wallet < self.price:
             return
