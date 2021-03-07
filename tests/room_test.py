@@ -47,8 +47,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(5, self.room.current_capacity)
 
     def test_check_out__pass(self):
-        self.room.check_in(self.guest)
-        self.assertEqual(5, self.room.current_capacity)
+        self.room.checked_in = True
         self.room.check_out(self.guest)
         self.assertEqual(4, self.room.current_capacity)
 
