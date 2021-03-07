@@ -31,3 +31,6 @@ class Guest:
                     self.rowdiness = 10
                 return 'Nice, I love this band!'
         return
+
+    def increase_drunkeness(self, drink):
+        self.drunkeness += drink.alcohol_level
